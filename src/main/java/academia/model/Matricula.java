@@ -1,13 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package academia.model;
 
-/**
- *
- * @author Usuario
- */
+import java.time.LocalDate;
+
 public class Matricula {
-    
+    private Estudiante estudiante;
+    private Curso curso;
+    private LocalDate fechaMatricula;
+
+    public Matricula(Estudiante estudiante, Curso curso) {
+        this.estudiante = estudiante;
+        this.curso = curso;
+        this.fechaMatricula = LocalDate.now();
+    }
+
+    public Estudiante getEstudiante() { return estudiante; }
+    public Curso getCurso() { return curso; }
+    public LocalDate getFechaMatricula() { return fechaMatricula; }
+
+    @Override
+    public String toString() {
+        return "Estudiante: " + estudiante.getCarnet() + " | Curso: " + curso.getCodigo() + " | Fecha: " + fechaMatricula;
+    }
 }
