@@ -7,18 +7,27 @@ public class Matricula {
     private Curso curso;
     private LocalDate fechaMatricula;
 
-    public Matricula(Estudiante estudiante, Curso curso) {
+    public Matricula(Estudiante estudiante, Curso curso, LocalDate fechaMatricula) {
         this.estudiante = estudiante;
         this.curso = curso;
-        this.fechaMatricula = LocalDate.now();
+        this.fechaMatricula = fechaMatricula;
     }
 
-    public Estudiante getEstudiante() { return estudiante; }
-    public Curso getCurso() { return curso; }
-    public LocalDate getFechaMatricula() { return fechaMatricula; }
+    public Estudiante getEstudiante() {
+        return estudiante;
+    }
+
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public LocalDate getFechaMatricula() {
+        return fechaMatricula;
+    }
 
     @Override
     public String toString() {
-        return "Estudiante: " + estudiante.getCarnet() + " | Curso: " + curso.getCodigo() + " | Fecha: " + fechaMatricula;
+        return "Estudiante: " + estudiante.getNombres() + " " + estudiante.getApellidos() +
+                " | Curso: " + curso.getNombre() + " | Fecha: " + fechaMatricula;
     }
 }

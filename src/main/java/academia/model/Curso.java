@@ -27,24 +27,9 @@ public class Curso {
     public int getCapacidadMaxima() { return capacidadMaxima; }
     public List<Estudiante> getListaEstudiantes() { return listaEstudiantes; }
 
-    public boolean agregarEstudiante(Estudiante estudiante) {
-        if (listaEstudiantes.size() >= capacidadMaxima) {
-            return false; // ya está lleno
-        }
-        return listaEstudiantes.add(estudiante);
-    }
-
-    public boolean estaLleno() {
-        return listaEstudiantes.size() >= capacidadMaxima;
-    }
-
-    public boolean contieneEstudiante(String carnet) {
-        return listaEstudiantes.stream().anyMatch(e -> e.getCarnet().equals(carnet));
-    }
-
     @Override
     public String toString() {
-        return "Código: " + codigo + " | Nombre: " + nombre + " | Profesor: " + profesor.getNombres() +
-               " " + profesor.getApellidos() + " | Capacidad: " + capacidadMaxima + " | Inscritos: " + listaEstudiantes.size();
+        return "Curso: " + nombre + " (" + codigo + ") | Profesor: " + profesor.getNombres() + " " + profesor.getApellidos() +
+                " | Capacidad: " + capacidadMaxima + " | Inscritos: " + listaEstudiantes.size();
     }
 }
